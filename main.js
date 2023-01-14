@@ -40,3 +40,14 @@ function getSize(){
         return input;
     }
 }
+
+function reset(){
+    let board = document.querySelector(".board");
+
+    //console.log(board.children)
+    for(let i = 0; i < board.children.length;i++){
+        console.log(board.children[i].style.backgroundColor)
+        board.children[i].style.backgroundColor = "transparent"
+    }
+    //div.style.backgroundColor = "white"
+}
