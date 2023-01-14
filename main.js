@@ -2,7 +2,11 @@ console.log("hey")
 
 document.addEventListener('DOMContentLoaded', function(){
     createBoard(16);
-    getSize()
+    let btn_popup = document.querySelector("#popup")
+    btn_popup.addEventListener("click", function (){
+        let size = getSize();
+        createBoard(size)
+    })
     console.log("hi");
 })
 
@@ -14,7 +18,10 @@ function createBoard(size){
     let numDivs = size * size;
     for(let i = 0; i<numDivs; i++){
         let div = document.createElement("div")
-        div.style.backgroundColor = "yellow";
+        div.addEventListener("mouseover", function(){
+            div.style.backgroundColor = "black";
+        })
+        
         board.insertAdjacentElement("beforeend", div)
     }
 }
@@ -30,5 +37,6 @@ function getSize(){
         message.innerHTML = "Provide a number between 1 and 100"
     } else {
         message.innerHTML = "Now You Play!"
+        return input;
     }
 }
