@@ -44,10 +44,33 @@ function getSize(){
 function reset(){
     let board = document.querySelector(".board");
 
-    //console.log(board.children)
     for(let i = 0; i < board.children.length;i++){
         console.log(board.children[i].style.backgroundColor)
         board.children[i].style.backgroundColor = "transparent"
     }
-    //div.style.backgroundColor = "white"
+
 }
+
+function black(){
+    let board = document.querySelector(".board");
+
+    for(let i = 0; i < board.children.length;i++){
+        console.log(board.children[i].style.backgroundColor)
+        board.children[i].style.backgroundColor = "black"
+    }
+
+}
+
+
+
+function getRandomInt() {
+    let board = document.querySelector(".board");
+    min = Math.ceil(0);
+    max = Math.floor(board.children.length);
+    for(let i = 0; i < board.children.length;i++){
+        console.log(board.children[i].style.backgroundColor)
+        board.children[i].style.backgroundColor = "transparent"
+        board.children[Math.floor(Math.random() * (max - min) + min)].style.backgroundColor = "black"
+    }  
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  }
